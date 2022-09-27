@@ -1,10 +1,23 @@
-use crate::conway::{Cell, CellState};
+use crate::conway::{Cell};
 
 mod conway;
 
-
 fn main() {
-    let mut world = conway::World::new(4, 4);
+    let cells = [
+        Cell::Live,
+        Cell::Dead,
+        Cell::Live,
+
+        Cell::Dead,
+        Cell::Dead,
+        Cell::Live,
+
+        Cell::Live,
+        Cell::Dead,
+        Cell::Live,
+
+    ];
+    let mut world = conway::World::new(&cells[..], 3, 3);
     world.forward_time();
-    println!("{}", world)
-} 
+    dbg!(world);
+}
