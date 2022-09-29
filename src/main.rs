@@ -3,7 +3,7 @@ use crate::conway::{Cell};
 mod conway;
 
 fn main() {
-    let cells = [
+    let cells = vec![
         Cell::Live, // 0 0
         Cell::Dead, // 1 0
         Cell::Live, // 2 0
@@ -17,8 +17,8 @@ fn main() {
         Cell::Live,
 
     ];
-    let mut world = conway::World::new(&cells[..], 3, 3);
-    let mut neighbors = world.get_neighbors(1);
-    neighbors.sort();
-    dbg!(neighbors);
+    let mut world = conway::World::new(cells, 3, 3);
+    dbg!(&world);
+    world.forward_time();
+    dbg!(&world);    
 }
