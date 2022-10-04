@@ -1,6 +1,4 @@
-use crate::conway::{Cell};
-
-mod conway;
+use conway::{Cell};
 
 fn main() {
     let cells = vec![

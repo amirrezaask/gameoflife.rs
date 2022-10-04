@@ -37,7 +37,7 @@ impl World {
             return false;
         }
 
-        return true;
+        true
     }
     /* 
     each cell has 8 neighbors
@@ -83,7 +83,7 @@ impl World {
             neighbors.push(self.get_index_from_coordinates(n8.0, n8.1));
         }
 
-        return neighbors;
+        neighbors
     }
 
     fn count_live_or_dead_neighbors_of_index(&self, index: isize) -> CountResult {
